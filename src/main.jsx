@@ -4,7 +4,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import App from "./App";
 import Root from "./routes/root";
 import UseCases from "./routes/useCases";
 import "./index.css";
@@ -23,7 +22,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} >
-      <App/>
     </RouterProvider>
   </React.StrictMode>
 );

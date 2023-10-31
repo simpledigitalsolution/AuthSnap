@@ -127,7 +127,7 @@ export default function UseCases() {
   }
 
   return (
-    <div>
+    <div className="p-8">
       {showInitialList && ( // conditionally render the initial item list
         <ul role="list" className="divide-y divide-gray-100">
           {availableItems.map((item, index) => (
@@ -157,13 +157,13 @@ export default function UseCases() {
       )}
       {!showInitialList && ( // conditionally render the selected item subtext list
         <div>
-          <h1 className="text-2xl font-bold">Selected Item Subtexts:</h1>
-          <ul className="list-disc pl-8">
+          <h1 className="text-2xl font-bold">Selected Item:</h1>
+          <ul className="divide-y divide-gray-100">
             {selectedItems.map((item, index) => (
               <li key={index} className="mt-2">
-                <p className="text-sm font-semibold leading-6 text-gray-900">
+                <h1 className="text-sm font-semibold underline leading-6 text-gray-900">
                   {item.text}
-                </p>
+                </h1>
                 <ul className="list-disc pl-8">
                   {item.subtexts.map((subtext, index) => (
                     <li key={index} className="mt-2">

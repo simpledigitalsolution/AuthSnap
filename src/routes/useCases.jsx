@@ -158,15 +158,16 @@ export default function UseCases() {
         )}
         {!showInitialList && ( // conditionally render the selected item subtext list
           <div className="flex flex-col">
-            <ul className="divide-y divide-gray-100">
+            <ul role="list" className="flex flex-col divide-y divide-gray-100">
               {selectedItems.map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-center justify-between gap-x-6 py-5"
-                >
-                  <ul className="list-disc pl-8">
+                <h1 className="flex flex-col gap-y-4 p-4" key={index}>
+                  <h1 className="text-2xl font-bold underline">{item.text}</h1>
+                  <ul className="flex flex-col list-disc divide-y divide-gray-100">
                     {item.subtexts.map((subtext, index) => (
-                      <li key={index} className="mt-2">
+                      <li
+                        key={index}
+                        className="flex items-center justify-between gap-x-6 py-5"
+                      >
                         <div className="flex min-w-0 gap-x-4">
                           <div className="min-w-0 flex-auto">
                             <p className="text-sm font-semibold leading-6 text-gray-900">
@@ -190,7 +191,7 @@ export default function UseCases() {
                       </li>
                     ))}
                   </ul>
-                </li>
+                </h1>
               ))}
             </ul>
             <button

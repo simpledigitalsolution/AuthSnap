@@ -32,54 +32,6 @@ export default function UseCases() {
         "Subtext 6",
       ],
     },
-    {
-      id: 3,
-      text: "Item 3",
-      subtexts: [
-        "Subtext 1",
-        "Subtext 2",
-        "Subtext 3",
-        "Subtext 4",
-        "Subtext 5",
-        "Subtext 6",
-      ],
-    },
-    {
-      id: 4,
-      text: "Item 4",
-      subtexts: [
-        "Subtext 1",
-        "Subtext 2",
-        "Subtext 3",
-        "Subtext 4",
-        "Subtext 5",
-        "Subtext 6",
-      ],
-    },
-    {
-      id: 5,
-      text: "Item 5",
-      subtexts: [
-        "Subtext 1",
-        "Subtext 2",
-        "Subtext 3",
-        "Subtext 4",
-        "Subtext 5",
-        "Subtext 6",
-      ],
-    },
-    {
-      id: 6,
-      text: "Item 6",
-      subtexts: [
-        "Subtext 1",
-        "Subtext 2",
-        "Subtext 3",
-        "Subtext 4",
-        "Subtext 5",
-        "Subtext 6",
-      ],
-    },
   ];
 
   const handleItemSelection = (item) => {

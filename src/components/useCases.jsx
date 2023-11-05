@@ -1,5 +1,7 @@
 import { useState } from "react";
+import BackButton from "./backButton";
 
+// TODO: refactor subtexts into its own component receiving props from UseCases
 export default function UseCases() {
   const [items, setItems] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
@@ -66,6 +68,7 @@ export default function UseCases() {
   if (isSubmitted) {
     return (
       <div className="p-4">
+        <BackButton />
         <h1 className="text-2xl font-bold">Selected Subtexts:</h1>
         <ul className="list-disc pl-8">
           {items.map((item, index) => (
@@ -81,6 +84,7 @@ export default function UseCases() {
   return (
     <>
       <div className="p-8">
+        <BackButton />
         {showInitialList && ( // conditionally render the initial item list
           <ul role="list" className="divide-y divide-gray-100">
             {availableItems.map((item, index) => (

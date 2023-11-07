@@ -71,31 +71,31 @@ export default function UseCasesList() {
   if (isSubmitted) {
     return (
       <div className="p-8">
+        <h1 className="text-2xl font-bold">Selected Subtexts:</h1>
+        <ul role="list" className="divide-y divide-gray-100">
+          {items.map((item, index) => (
+            <li
+              key={index}
+              className="flex items-center justify-between gap-x-6 py-5"
+            >
+              <div className="flex min-w-0 gap-x-4">
+                <div className="min-w-0 flex-auto">
+                  <p className="text-sm font-semibold leading-6 text-gray-900">
+                    {item}
+                  </p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
         <button
           onClick={() => {
             setIsSubmitted(false);
           }}
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="rounded-md mx-3 px-3 py-2 text-sm text-justify outline font-semibold text-indigo-800 shadow-lg hover:bg-indigo-500 hover:text-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Back
         </button>
-        <h1 className="text-2xl font-bold">Selected Subtexts:</h1>
-        <ul role="list" className="divide-y divide-gray-100">
-            {items.map((item, index) => (
-              <li
-                key={index}
-                className="flex items-center justify-between gap-x-6 py-5"
-              >
-                <div className="flex min-w-0 gap-x-4">
-                  <div className="min-w-0 flex-auto">
-                    <p className="text-sm font-semibold leading-6 text-gray-900">
-                      {item}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
       </div>
     );
   }
@@ -130,15 +130,7 @@ export default function UseCasesList() {
           </ul>
         )}
         {!showInitialList && ( // conditionally render the selected item subtext list
-          <div >
-            <button
-              onClick={() => {
-                handleBack();
-              }}
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Back
-            </button>
+          <div>
             <ul role="list" className="flex flex-col divide-y divide-gray-100">
               {selectedItems.map((item, index) => (
                 <h1 className="flex flex-col gap-y-4 " key={index}>
@@ -174,14 +166,26 @@ export default function UseCasesList() {
                 </h1>
               ))}
             </ul>
-            <button
-              onClick={() => {
-                handleSubmit();
-              }}
-              className={`flex w-full items-center justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0`}
-            >
-              View Selected
-            </button>
+            <div className="flex p-8 justify-between">
+              <button
+                type="button"
+                onClick={() => {
+                  handleBack();
+                }}
+                className="rounded-md mx-3 px-3 py-2 text-sm text-justify outline font-semibold text-indigo-800 shadow-lg hover:bg-indigo-500 hover:text-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  handleSubmit();
+                }}
+                className="rounded-md bg-indigo-800 px-3 py-2 text-sm font-semibold  text-white shadow-lg hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                View Selected
+              </button>
+            </div>
           </div>
         )}
       </div>
